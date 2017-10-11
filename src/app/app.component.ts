@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PlatziSquare';
+  title = 'Square with Angular 4';
   a = 3;
   b = 5;
   listo = false;
