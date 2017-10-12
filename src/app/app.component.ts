@@ -8,10 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Square with Angular 4';
-  a = 3;
-  b = 5;
   listo = false;
-  nombre:string = '';
   lugares:any = [
     {active: true, nombre:'Floreria la Gardenia'},
     {active: true, nombre:'Donas la padadita'},
