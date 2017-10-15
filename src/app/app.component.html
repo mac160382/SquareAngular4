@@ -9,13 +9,14 @@
 </ul>
 <ul>
   <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.cercania">
-    <li [ngStyle]="{color:(lugar.active) ? 'black' : 'gray'}"
-    [ngClass]="{number_par: (i+1) %2 !== 0}">
-      {{lugar.nombre}} -
-      <span *ngSwitchCase="1" [ngStyle] = "{color: 'green'}">Muy cercano</span> 
-      <span *ngSwitchCase="2" [ngStyle] = "{color: 'black'}">Cercano</span>
-      <span *ngSwitchCase="3" [ngStyle] = "{color: 'red'}">Lejano </span>
-    </li>
+    <a >
+      <li contar-clicks [ngStyle]="{color:(lugar.active) ? 'black' : 'gray'}"
+      [ngClass]="{number_par: (i+1) %2 !== 0}" [resltar]="lugar.plan">
+        {{lugar.nombre}} -
+        <span *ngSwitchCase="1" [ngStyle] = "{color: 'green'}">Muy cercano</span> 
+        <span *ngSwitchCase="2" [ngStyle] = "{color: 'black'}">Cercano</span>
+      </li>
+    </a>
   </ng-container> 
 </ul>
 
