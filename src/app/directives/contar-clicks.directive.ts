@@ -16,7 +16,7 @@ import {Directive, HostListener, HostBinding} from "@angular/core";
 export class ContarClicksDirective{
 	clickN = 0;
 
-	//Editamos directamente el estilo de opacidad		
+	//Editamos directamente el estilo de opacidad.	
 	@HostBinding('style.opacity') opacity: number = 0.1;
 
 	//P1. Eventos de html
