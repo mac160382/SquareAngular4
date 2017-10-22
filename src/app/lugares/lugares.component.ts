@@ -8,9 +8,9 @@ export class LugaresComponent {
   title = 'Square Angular 4';
   
   lugares:any = [
-    {active: true, nombre:'Floreria la Gardenia'},
-    {active: true, nombre:'Donas la padadita'},
-    {active: true, nombre:'Veterinaria Huelliltas Felices'},
+    {id:1, active: true, nombre:'Donas la padadita'},
+    {id:2, active: true, nombre:'Veterinaria Huelliltas Felices'},
+    {id:3, active: true, nombre:'Floreria la Gardenia'},
   ];
 
   lat:number = 4.6560663;
