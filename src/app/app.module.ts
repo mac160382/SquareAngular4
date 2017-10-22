@@ -10,11 +10,14 @@ import { ResaltarDirective } from './directives/resaltar.directive';
 
 import { ContarClicksDirective } from './directives/contar-clicks.directive';
 
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { DetalleComponent } from './detalle/detalle.component';
+import { LugaresComponent } from './lugares/lugares.component';
 
 const appRoutes: Routes = [
-  {path: '', component: AppComponent},
-  {path: 'lugares', component: AppComponent},
+  {path: '', component: LugaresComponent},
+  {path: 'lugares', component: LugaresComponent},
+  {path: 'detalle', component: DetalleComponent},
 ]
 
 @NgModule({
@@ -24,14 +27,19 @@ const appRoutes: Routes = [
     //Reslta en amarillo los elementos de la lista que estan en amarillo
     ResaltarDirective,
     //Identifica cuantos clicks se le han hecho al hipervinculo
-    ContarClicksDirective
+    ContarClicksDirective,
+    //Se realiza la creacion del producto  
+    DetalleComponent,
+
+    LugaresComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDAd3xU7sELOUbRyIhdCv1wVtNsSaA8BE4'
-    })
+    }),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
