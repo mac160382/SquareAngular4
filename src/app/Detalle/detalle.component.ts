@@ -8,5 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 export class DetalleComponent {
   constructor(private router: ActivatedRoute){
     console.log(this.router.snapshot.params['id']);
+    console.log(this.router.snapshot);
+    console.log(this.router.snapshot.queryParams['action2']);
+    console.log(this.router.snapshot.queryParams['referer']);
   }  
 }
