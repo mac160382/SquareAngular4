@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LugaresService } from '../services/lugares.service';
 
 @Component({
   selector: 'app-lugares',
@@ -6,17 +7,13 @@ import { Component } from '@angular/core';
 })
 export class LugaresComponent {
   title = 'Square Angular 4';
-  
-  lugares:any = [
-    {id:1, active: true, nombre:'Donas la padadita'},
-    {id:2, active: true, nombre:'Veterinaria Huelliltas Felices'},
-    {id:3, active: true, nombre:'Floreria la Gardenia'},
-  ];
-
+  lugares;
+    
   lat:number = 4.6560663;
   lng:number = -74.0595918;
 
-  constructor()
+  constructor(private lugaresService: LugaresService)
   {  	
+    this.lugares = lugaresService.getLugares();
   }  
 }
