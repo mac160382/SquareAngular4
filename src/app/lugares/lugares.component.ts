@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LugaresService } from '../services/lugares.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-lugares',
@@ -7,13 +8,16 @@ import { LugaresService } from '../services/lugares.service';
 })
 export class LugaresComponent {
   title = 'Square Angular 4';
-  lugares;
+  lugares = null;
     
   lat:number = 4.6560663;
   lng:number = -74.0595918;
 
   constructor(private lugaresService: LugaresService)
-  {  	
-    this.lugares = lugaresService.getLugares();
+  { 
+    lugaresService.getLugares().valueChanges()
+      .subscribe(lugares => {        
+        this.lugares = lugares; 
+      });    
   }  
 }
