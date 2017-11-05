@@ -25,6 +25,9 @@ export class LugaresComponent {
         this.lugares = lugares;
         var me = this; // Esto se tiene que utilizar por problemas en el scope dentro de la function del Map
         me.lugares = Object.keys(me.lugares).map(function(key) { return me.lugares[key]; });
+      }, error => { 
+        console.log(error); 
+        alert("Se presento un problema, disculpe las molestias. Error" + error.status);
       });
   }  
 

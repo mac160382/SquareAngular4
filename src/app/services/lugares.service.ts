@@ -18,7 +18,7 @@ export class LugaresService
 
     public getLugares()
     {     
-        return this.http.get(this.API_ENDPOINT+'/.json').map((response)=>{
+        return this.http.get(this.API_ENDPOINT+'/.js').map((response)=>{
             const data = response.json().lugares;
             return data;
         });
