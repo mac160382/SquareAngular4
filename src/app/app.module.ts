@@ -20,6 +20,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { CrearComponent } from './crear/crear.component';
+import { HttpModule } from '@angular/http';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDQz9RBQ2wmnX-ko_n7q_Q5q7AFwqH7ivk",
@@ -64,7 +65,8 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    BrowserModule    
+    BrowserModule,
+    HttpModule     
   ],
   providers: [LugaresService],
   bootstrap: [AppComponent]

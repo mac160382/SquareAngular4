@@ -43,9 +43,12 @@ export class CrearComponent {
   saveLugar()
   {
     this.lugar.id = Date.now();
-    this.lugaresService.guardarLugar(this.lugar);
-    alert("Negocio guardado con exito");
-    this.lugar = {};
+    this.lugaresService.guardarLugar(this.lugar)
+      .subscribe((items) => {
+        console.log(items);
+        alert("Negocio guardado con exito");
+        this.lugar = {};
+      });    
   }
 
   UpdateLugar()
