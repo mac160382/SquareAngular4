@@ -17,8 +17,9 @@ export class LugaresService
     }
 
     public getLugares()
-    {        
-        return this.fbDataBase.list('lugares/');
+    {     
+        return this.http.get(this.API_ENDPOINT+'/lugares.json');     
+        //return this.fbDataBase.list('lugares/');
     }
 
     public getSelecterItem(id)
@@ -28,14 +29,9 @@ export class LugaresService
 
     public guardarLugar(lugar)
     {   
-        const headers = new Headers({"Content-Type": "application/json"});  
-
-        console.log(this.API_ENDPOINT+'/lugares.json');
-        var result = this.http.post(this.API_ENDPOINT+'/lugares.json', lugar, {headers:headers});
-
-        console.log(result);
-        return result;
         //this.fbDataBase.database.ref('lugares/'+ lugar.id).set(lugar);
+        const headers = new Headers({"Content-Type": "application/json"});          
+        return this.http.post(this.API_ENDPOINT+'/lugares.json', lugar, {headers:headers});        
     }
 
     public actualizarLugar(lugar)

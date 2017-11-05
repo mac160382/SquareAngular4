@@ -15,10 +15,16 @@ export class LugaresComponent {
 
   constructor(private lugaresService: LugaresService)
   { 
+    /*
     lugaresService.getLugares().valueChanges()
       .subscribe(lugares => {        
         this.lugares = lugares; 
-      });    
+      });    */
+      lugaresService.getLugares().subscribe((lugares)=> {        
+        this.lugares = lugares.json();
+        var me = this; // Esto se tiene que utilizar por problemas en el scope dentro de la function del Map
+        me.lugares = Object.keys(me.lugares).map(function(key) { return me.lugares[key]; });
+      });
   }  
 
   deleteItem(lugar)
