@@ -7,14 +7,17 @@
     <div class="row">
         <div class="col-md-8">            
             <h2>Lugares Cercanos</h2>
-            <a class="btn btn-primary" routerLink="/crear">Crear nuevo negocio</a>
+            <a class="btn btn-primary" routerLink="/crear/new">Crear nuevo negocio</a>
             <ul class="list-group">
-                <ng-container *ngFor="let lugar of lugares">
-                    <a routerLink="/detalle/{{lugar.id}}" [queryParams]="{action2: 'edit', referer: 'google' }"><li class="list-group-item" *ngIf="lugar.active">{{lugar.nombre}}</li></a>
+                <ng-container *ngFor="let lugar of lugares">                   
+                    <li class="list-group-item" *ngIf="lugar.active">                                
+                        <span><a routerLink="/crear/{{lugar.id}}">{{lugar.nombre}}</a></span>
+                        <span><a class="glyphicon glyphicon-trash pull-right" (click)="deleteItem(lugar)"></a></span>                           
+                    </li>
                 </ng-container>	
             </ul>
-            </div>
-            <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
             <h2>Destacados</h2> 
         </div>
     </div>

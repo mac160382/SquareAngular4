@@ -1,5 +1,5 @@
 {
-  "name": "platzisquare",
+  "name": "square",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -28,7 +28,8 @@
     "firebase": "^4.6.0",
     "promise-polyfill": "^6.0.2",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "ng2-toastr": "PointInside/ng2-toastr#dev"
   },
   "devDependencies": {
     "@angular/cli": "1.4.5",

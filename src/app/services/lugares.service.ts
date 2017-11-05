@@ -21,12 +21,22 @@ export class LugaresService
 
     public getSelecterItem(id)
     {
-        return this.lugares.filter((lugar) => {return lugar.id == id })[0] || null;
+        return this.fbDataBase.object('lugares/'+ id);       
     }
 
     public guardarLugar(lugar)
+    {        
+        this.fbDataBase.database.ref('lugares/'+ lugar.id).set(lugar);
+    }
+
+    public actualizarLugar(lugar)
     {
         console.log(lugar);
         this.fbDataBase.database.ref('lugares/'+ lugar.id).set(lugar);
+    }
+
+    public borrarLugar(lugar)
+    {   
+        this.fbDataBase.object('lugares/'+ lugar.id).remove();
     }
 }

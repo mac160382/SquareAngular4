@@ -8,16 +8,48 @@ import { LugaresService } from '../services/lugares.service';
 })
 export class CrearComponent {
   lugar:any = {};
-   
-  constructor(private lugaresService: LugaresService)
+  id: any = null;
+  title: any = null;
+
+  constructor(private router: ActivatedRoute, private lugaresService: LugaresService)
   { 
-  }
+    this.id = this.router.snapshot.params['id'];    
     
-  guardarLugar(){
+    if(this.id != 'new')
+    {
+      this.title = "Editar lugar";
+      lugaresService.getSelecterItem(this.id).valueChanges()
+      .subscribe((lugar)=> { 
+        this.lugar = lugar;
+        console.log(lugar);
+      });
+    }
+    else{
+      this.title = "Crear lugar";
+    }
+  }
+
+  guardarLugar(){       
+    if(this.id == 'new')
+    {
+      this.saveLugar();
+    }
+    else
+    {
+      this.UpdateLugar();
+    }   
+  }
+
+  saveLugar()
+  {
     this.lugar.id = Date.now();
     this.lugaresService.guardarLugar(this.lugar);
     alert("Negocio guardado con exito");
     this.lugar = {};
   }
-  
+
+  UpdateLugar()
+  {    
+    this.lugaresService.actualizarLugar(this.lugar);
+  }
 }

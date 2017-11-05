@@ -20,4 +20,11 @@ export class LugaresComponent {
         this.lugares = lugares; 
       });    
   }  
+
+  deleteItem(lugar)
+  {
+    console.log(lugar);
+    alert("borrar");
+    this.lugaresService.borrarLugar(lugar);
+  }
 }

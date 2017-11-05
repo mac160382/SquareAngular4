@@ -18,8 +18,13 @@ export class DetalleComponent {
     console.log(this.router.snapshot.queryParams['referer']);
 
     this.id = this.router.snapshot.params['id'];
-    this.lugar = lugaresService.getSelecterItem(this.id);
+    this.lugar = lugaresService.getSelecterItem(this.id).valueChanges()
+    .subscribe(lugar => {        
+      this.lugar = lugar; 
+      console.log(lugar);
+    });    
+    
  
-    console.log(this.lugar);    
+    console.log(this.lugar) ;    
   }    
 }

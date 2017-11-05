@@ -1,5 +1,5 @@
 <div class="well">
-    <a routerLink="/lugares">Lugares</a> /Crear lugar
+    <a routerLink="/lugares">Lugares</a> /{{title}}
 </div>
 <div class="container">
     <label>Nombre</label>
@@ -18,11 +18,11 @@
     <input type="text" class="form-control" [(ngModel)]="lugar.plan">
     <br/>    
     <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" [(ngModel)]="lugar.active">
-              Activo
-            </label>
-          </div>
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" [(ngModel)]="lugar.active">
+            Activo
+        </label>
+    </div>
     <hr/>
     <a class="btn btn-primary" (click)="guardarLugar()">Enviar</a>
     <a class="btn btn-default" routerLink="/lugares">Cancelar</a>
