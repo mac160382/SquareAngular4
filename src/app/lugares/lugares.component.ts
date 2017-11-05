@@ -21,7 +21,8 @@ export class LugaresComponent {
         this.lugares = lugares; 
       });    */
       lugaresService.getLugares().subscribe((lugares)=> {        
-        this.lugares = lugares.json();
+        //this.lugares = lugares.json();
+        this.lugares = lugares;
         var me = this; // Esto se tiene que utilizar por problemas en el scope dentro de la function del Map
         me.lugares = Object.keys(me.lugares).map(function(key) { return me.lugares[key]; });
       });

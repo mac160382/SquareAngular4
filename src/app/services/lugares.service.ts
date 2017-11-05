@@ -18,7 +18,11 @@ export class LugaresService
 
     public getLugares()
     {     
-        return this.http.get(this.API_ENDPOINT+'/lugares.json');     
+        return this.http.get(this.API_ENDPOINT+'/.json').map((response)=>{
+            const data = response.json().lugares;
+            return data;
+        });
+        //return this.http.get(this.API_ENDPOINT+'/lugares.json');     
         //return this.fbDataBase.list('lugares/');
     }
 
