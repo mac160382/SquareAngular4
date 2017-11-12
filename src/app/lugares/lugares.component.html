@@ -15,7 +15,9 @@
                             <a routerLink="/crear/{{lugar.id}}">
                                 {{lugar.nombre}}
                                 <br/>
-                                Creado: {{lugar.id | date | uppercase}}
+                                Creado: {{lugar.id | date: 'medium' | uppercase}}
+                                <br/>
+                                {{123456.69876646 | number: '1.2-2'}}
                             </a>   
                         </span>
                         <span><a class="glyphicon glyphicon-trash pull-right" (click)="deleteItem(lugar)"></a></span>                           
