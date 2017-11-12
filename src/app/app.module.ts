@@ -21,6 +21,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { CrearComponent } from './crear/crear.component';
 import { HttpModule } from '@angular/http';
+import { LinkifystrPipe } from './pipes/linkifystr.pipes';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDQz9RBQ2wmnX-ko_n7q_Q5q7AFwqH7ivk",
@@ -53,7 +54,9 @@ const appRoutes: Routes = [
     //Obtener comentarios
     ContactoComponent,
     //Crear un lugar
-    CrearComponent
+    CrearComponent,
+    // Transformacion de string que contienen hipervinculos
+    LinkifystrPipe
   ],
   imports: [
     BrowserModule,

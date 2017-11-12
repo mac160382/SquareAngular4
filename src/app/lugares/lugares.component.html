@@ -11,16 +11,12 @@
             <ul class="list-group">
                 <ng-container *ngFor="let lugar of lugares">                   
                     <li class="list-group-item" *ngIf="lugar.active">                                
-                        <span>
-                            <a routerLink="/crear/{{lugar.id}}">
-                                {{lugar.nombre}}
-                                <br/>
-                                Creado: {{lugar.id | date: 'medium' | uppercase}}
-                                <br/>
-                                {{123456.69876646 | number: '1.2-2'}}
-                            </a>   
-                        </span>
-                        <span><a class="glyphicon glyphicon-trash pull-right" (click)="deleteItem(lugar)"></a></span>                           
+                        <!--<span>-->
+                            <a routerLink="/crear/{{lugar.id}}"><h4>{{lugar.nombre}}</h4></a> 
+                            <small>Creado: {{lugar.id | date: 'medium' | uppercase}}</small>
+                            <p [innerHtml]="lugar.descripcion | linkifystr"></p>
+                        <!--</span>-->
+                        <!--<span><a class="glyphicon glyphicon-trash pull-right" (click)="deleteItem(lugar)"></a></span>-->
                     </li>
                 </ng-container>	
             </ul>

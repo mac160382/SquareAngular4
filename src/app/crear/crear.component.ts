@@ -15,6 +15,9 @@ export class CrearComponent {
   { 
     this.id = this.router.snapshot.params['id'];    
     
+    console.log(this.router.snapshot.params['id']);
+    
+
     if(this.id != 'new')
     {
       this.title = "Editar lugar";
